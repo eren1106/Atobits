@@ -1,14 +1,15 @@
-import { Grid, GridItem } from '@chakra-ui/react'
+import HabitCard from '@/components/HabitCard'
+import { Grid, GridItem, HStack, Stack } from '@chakra-ui/react'
 import React from 'react'
 
 const Home = () => {
   return (
     <div>
       <Grid
-        h='600px'
+        h='650px'
         templateRows='repeat(9, 1fr)'
         templateColumns='repeat(3, 1fr)'
-        gap={12}
+        gap={3}
       >
         <HomeCard row={4} col={2}>
           <HabitsContent />
@@ -43,7 +44,7 @@ const HomeCard = ({
 }: HomeCardProps) => {
   return (
     <GridItem rowSpan={row} colSpan={col}>
-      <div className='p-6 shadow-md rounded-lg min-h-full bg-secondary'>
+      <div className='px-6 py-4 shadow-md rounded-lg min-h-full bg-secondary'>
         {children}
       </div>
     </GridItem>
@@ -52,9 +53,23 @@ const HomeCard = ({
 
 const HabitsContent = () => {
   return (
-    <div>
-      habits
-    </div>
+    <Stack spacing={3}>
+      <h2 className='text-lg font-bold'>Habits</h2>
+      <HStack>
+        <HabitCard
+          name='Read Book'
+          description='Read Book for 10 minutes'
+        />
+        <HabitCard
+          name='Workout'
+          description='Workout for 10 minutes'
+        />
+        <HabitCard
+          name='Journal'
+          description='Record my day'
+        />
+      </HStack>
+    </Stack>
   );
 }
 
