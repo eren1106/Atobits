@@ -1,4 +1,5 @@
 import HabitCard from '@/components/HabitCard'
+import { mockHabits } from '@/constants/mockData'
 import { Grid, GridItem, HStack, Stack } from '@chakra-ui/react'
 import React from 'react'
 
@@ -37,6 +38,7 @@ interface HomeCardProps {
   children: React.ReactNode
 }
 
+// card in the grid
 const HomeCard = ({
   row,
   col,
@@ -55,19 +57,15 @@ const HabitsContent = () => {
   return (
     <Stack spacing={3}>
       <h2 className='text-lg font-bold'>Habits</h2>
-      <HStack>
-        <HabitCard
-          name='Read Book'
-          description='Read Book for 10 minutes'
-        />
-        <HabitCard
-          name='Workout'
-          description='Workout for 10 minutes'
-        />
-        <HabitCard
-          name='Journal'
-          description='Record my day'
-        />
+      <HStack spacing={3} className='overflow-x-scroll'>
+        {
+          mockHabits.map((habit) => (
+            <HabitCard
+              name={habit.name}
+              description={habit.description}
+            />
+          ))
+        }
       </HStack>
     </Stack>
   );
