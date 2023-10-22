@@ -17,7 +17,7 @@ const HabitCard = ({name, description}: Props) => {
         <p className='text-xl font-bold'>{name}</p>
         <p className='text-sm text-center'>{description}</p>
       </Stack>
-      <Button colorScheme="yellow" className='btn mt-1' size='md'>Mark as done</Button>
+      <Button colorScheme="" className='btn mt-1' size='md'>Mark as done</Button>
     </div>
   )
 }

@@ -5,6 +5,6 @@
 @layer components {
   .btn {
     @apply bg-tertiary;
-    @apply hover:bg-secondary;
+    @apply hover:scale-105;
   }
 }

@@ -63,6 +63,7 @@ const HabitsContent = () => {
             <HabitCard
               name={habit.name}
               description={habit.description}
+              key={habit.id}
             />
           ))
         }
