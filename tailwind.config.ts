@@ -17,6 +17,7 @@ const config: Config = {
       'gray': colors.gray['300'],
       'white': '#ffffff',
       'tertiary': '#ee9611',
+      'tertiary-hover': '#e38902',
     },
     extend: {
       backgroundImage: {

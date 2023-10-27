@@ -1,6 +1,10 @@
+'use client'
+
 import HabitCard from '@/components/HabitCard'
-import { mockHabits } from '@/constants/mockData'
-import { Grid, GridItem, HStack, Stack } from '@chakra-ui/react'
+import TaskCard from '@/components/TaskCard'
+import { mockHabits, mockTasks } from '@/constants/mockData'
+import { AddIcon } from '@chakra-ui/icons'
+import { Button, Grid, GridItem } from '@chakra-ui/react'
 import React from 'react'
 
 const Home = () => {
@@ -46,7 +50,7 @@ const HomeCard = ({
 }: HomeCardProps) => {
   return (
     <GridItem rowSpan={row} colSpan={col}>
-      <div className='px-6 py-4 shadow-md rounded-lg min-h-full bg-secondary'>
+      <div className='home-card px-6 py-4 shadow-md rounded-lg min-h-full max-h-full h-full bg-secondary'>
         {children}
       </div>
     </GridItem>
@@ -55,9 +59,9 @@ const HomeCard = ({
 
 const HabitsContent = () => {
   return (
-    <Stack spacing={3}>
+    <div className='flex flex-col gap-3'>
       <h2 className='text-lg font-bold'>Habits</h2>
-      <HStack spacing={3} className='overflow-x-scroll'>
+      <div className='flex gap-3 overflow-x-scroll'>
         {
           mockHabits.map((habit) => (
             <HabitCard
@@ -67,15 +71,35 @@ const HabitsContent = () => {
             />
           ))
         }
-      </HStack>
-    </Stack>
+      </div>
+    </div>
   );
 }
 
 const TodoListContent = () => {
   return (
-    <div>
-      todo
+    <div className='flex flex-col gap-3 h-full'>
+      <div className='flex justify-between items-center'>
+        <h2 className='text-lg font-bold'>To-do List</h2>
+        <Button
+          leftIcon={<AddIcon />}
+          colorScheme=""
+          className='btn'
+          size='sm'
+        >
+          Add
+        </Button>
+      </div>
+
+      <div className='flex flex-col gap-2 overflow-y-scroll'>
+        {mockTasks.map((task) => (
+          <TaskCard
+            title={task.title}
+            description={task.description}
+            key={task.id}
+          />
+        ))}
+      </div>
     </div>
   );
 }

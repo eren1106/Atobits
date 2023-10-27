@@ -44,4 +44,32 @@ export const mockHabits = [
     name: 'Journal',
     description: 'Record my day',
   }
-]
+];
+
+export const mockTasks = [
+  {
+    id: 1,
+    title: 'Read Book',
+    description: 'Read Book for 10 minutes',
+  },
+  {
+    id: 2,
+    title: 'Workout',
+    description: 'Workout for 10 minutes',
+  },
+  {
+    id: 3,
+    title: 'Journal',
+    description: 'Record my day',
+  },
+  {
+    id: 4,
+    title: 'Read Book',
+    description: 'Read Book for 10 minutes',
+  },
+  {
+    id: 5,
+    title: 'Workout',
+    description: 'Workout for 10 minutes',
+  },
+];
