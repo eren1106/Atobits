@@ -2,11 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
+/* @layer components {
   .btn {
     @apply bg-tertiary;
     @apply hover:bg-tertiary-hover;
   }
+} */
+
+.btn {
+  @apply bg-tertiary;
+  @apply hover:bg-tertiary-hover;
+}
+
+.btn-accent {
+  @apply bg-accent;
+  @apply hover:bg-accent-hover;
 }
 
 .home-card {
